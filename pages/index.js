@@ -46,6 +46,7 @@ export default class Counter extends React.Component {
               display: flex;
               justify-content: center;
               align-items: center;
+              overflow: hidden;
             }
             button {
               width: 100%;
