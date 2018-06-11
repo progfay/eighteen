@@ -54,12 +54,13 @@ export default class Counter extends React.Component {
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: fixed;
           }
           button {
             width: 100%;
             margin: 0 10%;
             height: 15vh;
-            font-size: 12vh;
+            font-size: 10vh;
             background: none;
             border: none;
           }
@@ -76,6 +77,8 @@ export default class Counter extends React.Component {
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
+            position: fixed;
+            transform: translateX(-50%) translateY(-50%);
           }
           #rock-scissors-paper {
             width: 100%;
