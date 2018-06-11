@@ -1,6 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
-import Manifest from 'next-manifest/manifest'
 import Button from '../components/button'
 
 export default class Counter extends React.Component {
@@ -9,6 +7,19 @@ export default class Counter extends React.Component {
     this.state = { count: 18 }
     this.reduce = this.reduce.bind(this)
     this.reset = this.reset.bind(this)
+  }
+
+  componentDidMount () {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then(registration => {
+          console.log('service worker registration successful')
+        })
+        .catch(err => {
+          console.warn('service worker registration failed', err.message)
+        })
+    }
   }
 
   reduce (num) {
